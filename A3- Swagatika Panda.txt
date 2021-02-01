@@ -1,0 +1,136 @@
+PROGRAM 1
+_____________________
+#include <stdio.h> 
+int main()
+{
+    int a = 125, b = 12345;
+    long ax = 1234567890;
+    short s = 4043;
+    float x = 2.13459;
+    double dx = 1.1415927;
+    char c = 'W';
+    unsigned long ux = 2541567890;
+
+    printf("a + c =  %d\n", a + c);
+    printf("x + c = %f\n", x + c);
+    printf("dx + x = %f\n", dx + x);
+    printf("((int) dx) + ax =  %ld\n", ((int) dx) + ax);
+    printf("a + x = %f\n", a + x);
+    printf("s + b =  %d\n", s + b);
+    printf("ax + b = %ld\n", ax + b);
+    printf("s + c =  %hd\n", s + c);
+    printf("ax + c = %ld\n", ax + c);
+    printf("ax + ux = %lu\n", ax + ux);
+
+    return 0;
+}
+
+PROGRAM 2
+_____________________
+#include <stdio.h> 
+int main()
+{
+    int days, years, weeks;
+
+    printf("Enter days: ");
+    scanf("%d", &days);
+
+    years = days/365; 
+    weeks = (days % 365)/7;
+    days = days- ((years*365) + (weeks*7));
+
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d \n", days);
+
+    return 0;
+}
+
+PROGRAM 3
+_______________________
+#include <stdio.h>
+int main() 
+   {
+     double w1, n1, w2, n2, result;
+    	printf("Weight of first item : ");
+	scanf("%lf", &w1);
+	printf("No. of first item: ");
+	scanf("%lf", &n1);
+	printf("Weight of second item: ");
+	scanf("%lf", &w2);
+	printf("No. of second item: ");
+	scanf("%lf", &n2);
+	result = ((w1 * n1) + (w2 * n2)) / (n1 + n2);
+	printf("Average Value = %f\n", result);
+     return 0;
+}
+
+PROGRAM 4
+_______________________
+#include <stdio.h>
+int main()
+{
+     enum week{Sun, Mon, Tue, Wed, Thu, Fri, Sat};
+	printf("Sun = %d", Sun);
+	printf("\nMon = %d", Mon);
+	printf("\nTue = %d", Tue);
+	printf("\nWed = %d", Wed);
+	printf("\nThu = %d", Thu);
+	printf("\nFri = %d", Fri);
+	printf("\nSat = %d", Sat);
+    return 0;
+}
+
+PROGRAM 5
+__________________________
+#include<stdio.h>
+int main()
+{
+     float fahrenheit, celsius;
+	celsius = 24;
+	fahrenheit =((celsius*9)/5)+32;
+	printf("\n Temperature in fahrenheit is: %f",fahrenheit);
+    return (0);
+}
+
+PROGRAM 6
+_____________________________
+
+#include <stdio.h>
+
+int main()
+{
+    float length, width, perimeter;
+
+    printf("Enter length of the rectangle: ");
+    scanf("%f", &length);
+    printf("Enter width of the rectangle: ");
+    scanf("%f", &width);
+
+    perimeter = 2 * (length + width);
+
+    printf("Perimeter of rectangle = %f units ", perimeter);
+
+    return 0;
+}
+
+PROGRAM 10
+________________________________
+#include<stdio.h>
+int main()
+{
+    printf("Size of char: %ld byte\n",sizeof(char));
+    printf("Size of int: %ld bytes\n",sizeof(int));
+    printf("Size of float: %ld bytes\n",sizeof(float));
+    printf("Size of double: %ld bytes", sizeof(double));
+    return 0;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,325 @@
+1. Check Whether a Character is a Vowel or Consonant.
+
+#include <stdio.h>
+int main() {
+    char c;
+    int lowercase_vowel, uppercase_vowel;
+    printf("Enter an alphabet: ");
+    scanf("%c", &c);
+
+    lowercase_vowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+
+    uppercase_vowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+
+    if (lowercase_vowel || uppercase_vowel)
+        printf("%c is a vowel.", c);
+    else
+        printf("%c is a consonant.", c);
+    return 0;
+}
+
+2. Find Roots of a Quadratic Equation.
+
+#include <math.h>
+#include <stdio.h>
+int main() {
+    double a, b, c, D, root1, root2, realPart, imagPart;
+    printf("Enter coefficients a, b and c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    D = b * b - 4 * a * c;
+
+    // condition for real and different roots
+    if (D > 0) {
+        root1 = (-b + sqrt(D)) / (2 * a);
+        root2 = (-b - sqrt(D)) / (2 * a);
+        printf("root1 = %.2lf and root2 = %.2lf", root1, root2);
+    }
+
+    // condition for real and equal roots
+    else if (D == 0) {
+        root1 = root2 = -b / (2 * a);
+        printf("root1 = root2 = %.2lf;", root1);
+    }
+
+    // if roots are not real
+    else {
+        realPart = -b / (2 * a);
+        imagPart = sqrt(-D) / (2 * a);
+        printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
+    }
+
+    return 0;
+} 
+
+
+3. Check Leap Year. 
+
+#include <stdio.h>
+int main() {
+   int year;
+   printf("Enter a valid year: ");
+   scanf("%d", &year);
+
+   if (year % 400 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   else if (year % 100 == 0) {
+      printf("%d is not a leap year.", year);
+   }
+   else if (year % 4 == 0) {
+      printf("%d is a leap year.", year);
+   }
+   else {
+      printf("%d is not a leap year.", year);
+   }
+
+   return 0;
+}
+
+4. Check which number nearest to the value 100 among two given integers. Return 0 if the two numbers are equal.
+
+    #include <stdio.h>
+
+    int main(void){
+    	printf("%d",test(23, 89));
+    	printf("\n%d",test(60, 60));
+    	printf("\n%d",test(95, 65));
+    }       
+   int test(int x, int y)
+        {
+            int n = 100;
+            int val = abs(x - n);
+            int val2 = abs(y - n);
+            return val == val2 ? 0 : (val < val2 ? x : y);
+        }
+   
+
+5. Check three given integers (small, medium and large) and return true if the difference between small and 
+medium and the difference between medium and large is same.
+
+
+	#include <stdio.h>
+
+	int main(void){    
+    		printf("%d",test(4, 5, 6));
+    		printf("\n%d",test(7, 12, 13));
+    		printf("\n%d",test(-1, 0, 1));
+    	}       
+   	int test(int x, int y, int z)
+         {
+            if (x > y && x > z && y > z) return x - y == y - z;
+            if (x > y && x > z && z > y) return x - z == z - y;
+            if (y > x && y > z && x > z) return y - x == x - z;
+            if (y > x && y > z && z > x) return y - z == z - x;
+            if (z > x && z > y && x > y) return z - x == x - y;
+            return z - y == y - x;
+         }
+
+PROGRAM - 6
+____________________
+
+#include <stdio.h>
+
+int main() {
+    int id, unit;
+    char name[20];
+    float charge, sur_charge=0, amount, net_amount; 
+    
+   printf("Input Customer ID :");
+   scanf("%d",&id);
+   printf("Input the name of the customer :");
+   scanf("%s",name);
+   printf("Input the unit consumed by the customer : ");
+   scanf("%d",&unit);
+   if (unit <200 )
+	charge = 1.20;
+   else	if (unit>=200 && unit<400)
+		charge = 1.50;
+	else if (unit>=400 && unit<600)
+			charge = 1.80;
+		else
+			charge = 2.00;
+	amount = unit*charge;
+   if (amount>300)
+	sur_charge = amount*15/100.0;
+   net_amount = amount+sur_charge;
+   if (net_amount  < 100)
+	net_amount =100;
+	
+   printf("\nElectricity Bill\n");
+   printf("Customer ID      :%d\n",id);
+   printf("Customer Name :%s\n",name);
+   printf("unit Consumed :%d\n",unit);
+   printf("Amount Charges @Rs. %4.2f  per unit :%8.2f\n",charge,amount);
+   printf("Surchage Amount :%8.2f\n",sur_charge);
+   printf("Net Amount Paid By the Customer :%8.2f\n",net_amount);
+    
+    return 0;
+}
+
+PROGRAM -7
+_________________________________
+
+#include<stdio.h>
+void main()
+{
+    int sub1, sub2, sub3, avg;
+    printf("Enter your mark in sub1: ");
+    scanf("%d",&sub1);
+    printf("Enter your mark in sub2: ");
+    scanf("%d",&sub2);
+    printf("Enter your mark in sub3: ");
+    scanf("%d",&sub2);
+
+    avg = (sub1+sub2+sub3) / 3;
+
+    if(avg<0 || avg>100)
+    {
+        printf("Wrong Entry");
+    }
+    else if(marks<60)
+    {
+        printf("Grade F");
+    }
+    else if(marks>=60 && marks<70)
+    {
+        printf("Grade D");
+    }
+    else if(marks>=70 && marks<80)
+    {
+        printf("Grade C");
+    }
+    else if(marks>=80 && marks<90)
+    {
+        printf("Grade B");
+    }
+    else if(marks>=90 && marks<100)
+    {
+        printf("Grade A");
+    }
+    else
+    {
+        printf("Grade A+");
+    }
+}
+
+
+
+PROGRAM - 8 Print the total number of days in a month using switch case. 
+
+#include <stdio.h>
+
+int main()
+{
+    int month;
+
+    /* Input month number from user */
+    printf("Enter month number(1-12): ");
+    scanf("%d", &month);
+
+    switch(month)
+    {
+        case 1: 
+            printf("31 days");
+            break;
+        case 2: 
+            printf("28/29 days");
+            break;
+        case 3: 
+            printf("31 days");
+            break;
+        case 4: 
+            printf("30 days");
+            break;
+        case 5: 
+            printf("31 days");
+            break;
+        case 6: 
+            printf("30 days");
+            break;
+        case 7: 
+            printf("31 days");
+            break;
+        case 8: 
+            printf("31 days");
+            break;
+        case 9: 
+            printf("30 days");
+            break;
+        case 10: 
+            printf("31 days");
+            break;
+        case 11: 
+            printf("30 days");
+            break;
+        case 12: 
+            printf("31 days");
+            break;
+        default: 
+            printf("Invalid input! Please enter month number between 1-12");
+
+    }
+
+    return 0;
+}
+
+PROGRAM -9 create Simple Calculator using switch case.
+
+#include <stdio.h>
+int main() {
+    char operator;
+    double first, second;
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &operator);
+    printf("Enter two operands: ");
+    scanf("%lf %lf", &first, &second);
+
+    switch (operator) {
+    case '+':
+        printf("%.1lf + %.1lf = %.1lf", first, second, first + second);
+        break;
+    case '-':
+        printf("%.1lf - %.1lf = %.1lf", first, second, first - second);
+        break;
+    case '*':
+        printf("%.1lf * %.1lf = %.1lf", first, second, first * second);
+        break;
+    case '/':
+        printf("%.1lf / %.1lf = %.1lf", first, second, first / second);
+        break;
+    default:
+        printf("Error! operator is not correct");
+    }
+
+    return 0;
+}
+
+PROGRAM - 10 
+______________________________
+#include <stdio.h>
+
+int main() {
+    char grade;
+    printf("enter grade: ");
+    scanf("%c", &grade);
+    switch(grade){
+        case 'A' || 'a':
+            printf("Excellent");
+            break;
+        case 'B':
+            printf("Good");
+            break;
+        case 'C':
+            printf("Average");
+            break;
+        case 'D':
+            printf("Deficient");
+            break;
+        case 'E':
+            printf("Fail");
+            break;
+    }
+    return 0;
+}
+
